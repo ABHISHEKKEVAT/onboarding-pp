@@ -27,6 +27,13 @@ body.dark .card, body.dark .chat-box {
   color: white;
   border-color: #444;
 }
+body.sidebar-open main,
+body.sidebar-open header,
+body.sidebar-open footer {
+  margin-left: 250px;
+  transition: margin-left 0.3s ease;
+}
+
 
 /* HEADER */
 header {
@@ -107,7 +114,7 @@ section h2 {
   top: 0;
   left: -250px;
   padding: 20px;
-  transition: 0.3s;
+  transition: left 0.3s ease;
   z-index: 9998; /* FIXED */
 }
 .sidebar.open {
