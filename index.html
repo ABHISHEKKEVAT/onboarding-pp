@@ -10,6 +10,10 @@
 <body>
 
 <!-- SIDEBAR -->
+<div class="menu-icon" onclick="toggleSidebar()">☰</div>
+
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
 <div class="sidebar" id="sidebar">
   <h2>Menu</h2>
   <a href="#overview">Overview</a>
@@ -43,7 +47,9 @@
   <h1>AI for Employee Onboarding & Knowledge Sharing</h1>
   <p>AI transforms onboarding and internal knowledge into a smooth, personalized experience.</p>
 
-  <a href="#chatbot" class="chat-btn">Try the AI Chatbot</a>
+  <a href="#chatbot" class="chat-btn" style="margin: 40px auto; display: block; width: max-content;">
+   Try the AI Chatbot
+   </a>
 </header>
 
 <main>
@@ -97,7 +103,8 @@
 
   <!-- CHATBOT SECTION -->
   <section id="chatbot">
-    <h2>AI Chatbot</h2>
+    <h2>my own AI Chatbot</h2>
+    
     <div class="chat-box">
       <div class="chat-log" id="chatLog"></div>
       <div class="input-row">
@@ -127,10 +134,14 @@
 
 <script>
 /* SIDEBAR */
-function toggleSidebar(){
-    document.getElementById("sidebar").classList.toggle("open"); 
-    document.body.classList.toggle("sidebar-open");
-    }
+function toggleSidebar() {
+  const sidebar = document.getElementById("sidebar");
+  const overlay = document.getElementById("sidebarOverlay");
+
+  sidebar.classList.toggle("open");
+  overlay.classList.toggle("show");
+  document.body.classList.toggle("sidebar-open");
+}
 
 /* DARK MODE */
 function toggleDarkMode(){ document.body.classList.toggle("dark"); }
@@ -173,6 +184,204 @@ function getAIResponse(q){
   if(q.includes("leave")) return "You can request leave through the HR portal.";
   if(q.includes("benefits")) return "You can view your benefits in the HR system.";
   if(q.includes("onboarding")) return "Onboarding includes training, setup, and team introductions.";
+  if(q.includes("abhishek")) return "hello sir , how may i help you";
+  return "This is a demo response showing how AI can answer internal questions instantly.";
+}
+
+/* CLOCK */
+function updateClock(){ document.getElementById("clock").textContent=new Date().toLocaleString(); }
+setInterval(updateClock,1000); updateClock();
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Employee Experience</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<div class="menu-icon" onclick="toggleSidebar()">☰</div>
+
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+<div class="sidebar" id="sidebar">
+  <h2>Menu</h2>
+  <a href="#overview">Overview</a>
+  <a href="#benefits">Benefits</a>
+  <a href="#use-cases">Use Cases</a>
+  <a href="#implementation">Implementation</a>
+  <a href="#best-practices">Best Practices</a>
+  <a href="#chatbot">Chatbot</a>
+</div>
+
+<!-- MENU ICON -->
+<div class="menu-icon" onclick="toggleSidebar()">☰</div>
+
+<header>
+  <div class="header-controls">
+    <div class="toggle-switch" onclick="toggleDarkMode()"><div class="circle"></div></div>
+
+    <div class="profile">
+      <div class="profile-btn" onclick="toggleDropdown()">Profile</div>
+      <div class="dropdown" id="dropdown">
+        <a href="#">My Account</a>
+        <a href="#">Settings</a>
+        <a href="#">Logout</a>
+      </div>
+    </div>
+
+    <button onclick="openPopup('login')">Login</button>
+    <button onclick="openPopup('signup')">Sign Up</button>
+  </div>
+
+  <h1>AI for Employee Onboarding & Knowledge Sharing</h1>
+  <p>AI transforms onboarding and internal knowledge into a smooth, personalized experience.</p>
+
+  <a href="#chatbot" class="chat-btn" style="margin: 40px auto; display: block; width: max-content;">
+   Try the AI Chatbot
+   </a>
+</header>
+
+<main>
+  <!-- Your informational sections -->
+  <section id="overview">
+    <h2>Overview</h2>
+    <p>Modern organizations generate huge amounts of information...</p>
+    <p>AI-powered assistants make information instantly searchable...</p>
+  </section>
+
+  <section id="benefits">
+    <h2>Key Benefits</h2>
+    <div class="grid">
+      <div class="card"><h3>Faster onboarding</h3><p>New hires get instant answers...</p></div>
+      <div class="card"><h3>Consistent information</h3><p>AI uses a single knowledge base...</p></div>
+      <div class="card"><h3>Reduced support load</h3><p>HR and IT save time...</p></div>
+      <div class="card"><h3>Personalized learning</h3><p>AI adapts to each employee...</p></div>
+    </div>
+  </section>
+
+  <section id="use-cases">
+    <h2>Use Cases</h2>
+    <div class="grid">
+      <div class="card"><h3>Onboarding Copilot</h3><p>Guides new hires...</p></div>
+      <div class="card"><h3>HR FAQ Bot</h3><p>Answers policy questions...</p></div>
+      <div class="card"><h3>IT Helpdesk</h3><p>Explains how to access systems...</p></div>
+      <div class="card"><h3>Project Knowledge</h3><p>Captures lessons learned...</p></div>
+    </div>
+  </section>
+
+  <section id="implementation">
+    <h2>How to Get Started</h2>
+    <ul>
+      <li>Centralize content</li>
+      <li>Define use cases</li>
+      <li>Choose AI tools</li>
+      <li>Pilot with a small group</li>
+      <li>Measure impact</li>
+    </ul>
+  </section>
+
+  <section id="best-practices">
+    <h2>Best Practices</h2>
+    <ul>
+      <li>Data security</li>
+      <li>Content quality</li>
+      <li>Transparency</li>
+      <li>Human in the loop</li>
+    </ul>
+  </section>
+
+  <!-- CHATBOT SECTION -->
+  <section id="chatbot">
+    <h2>my own AI Chatbot</h2>
+    
+    <div class="chat-box">
+      <div class="chat-log" id="chatLog"></div>
+      <div class="input-row">
+        <input id="userInput" placeholder="Ask a question...">
+        <button onclick="sendMessage()">Send</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div>© 2026 — AI‑Powered Employee Experience</div>
+  <div id="clock"></div>
+</footer>
+
+<!-- POPUP -->
+<div class="popup-bg" id="popupBg">
+  <div class="popup">
+    <h2 id="popupTitle"></h2>
+    <input type="text" placeholder="Email">
+    <input type="password" placeholder="Password">
+    <button style="width:100%;">Submit</button>
+    <br><br>
+    <button onclick="closePopup()" style="background:#ccc; color:black;">Close</button>
+  </div>
+</div>
+
+<script>
+/* SIDEBAR */
+function toggleSidebar() {
+  const sidebar = document.getElementById("sidebar");
+  const overlay = document.getElementById("sidebarOverlay");
+
+  sidebar.classList.toggle("open");
+  overlay.classList.toggle("show");
+  document.body.classList.toggle("sidebar-open");
+}
+
+/* DARK MODE */
+function toggleDarkMode(){ document.body.classList.toggle("dark"); }
+
+/* PROFILE DROPDOWN */
+function toggleDropdown(){
+  const d=document.getElementById("dropdown");
+  d.style.display=d.style.display==="block"?"none":"block";
+}
+
+/* POPUP */
+function openPopup(type){
+  document.getElementById("popupBg").style.display="flex";
+  document.getElementById("popupTitle").textContent=type==="login"?"Login":"Sign Up";
+}
+function closePopup(){ document.getElementById("popupBg").style.display="none"; }
+
+/* CHATBOT */
+function sendMessage(){
+  const input=document.getElementById("userInput");
+  const log=document.getElementById("chatLog");
+  const text=input.value.trim();
+  if(!text) return;
+
+  log.innerHTML+=`<div><strong>You:</strong> ${text}</div>`;
+
+  setTimeout(()=>{
+    log.innerHTML+=`<div><strong>AI:</strong> ${getAIResponse(text)}</div>`;
+    log.scrollTop=log.scrollHeight;
+  },400);
+
+  input.value="";
+}
+
+function getAIResponse(q){
+  q=q.toLowerCase().trim();
+  if(q==="hello") return "Hello! How can I help you today?";
+  if(q==="hi") return "Hi! What would you like to know?";
+  if(q==="hey") return "Hey! How can I assist you?";
+  if(q.includes("leave")) return "You can request leave through the HR portal.";
+  if(q.includes("benefits")) return "You can view your benefits in the HR system.";
+  if(q.includes("onboarding")) return "Onboarding includes training, setup, and team introductions.";
+  if(q.includes("abhishek")) return "hello sir , how may i help you";
   return "This is a demo response showing how AI can answer internal questions instantly.";
 }
 
