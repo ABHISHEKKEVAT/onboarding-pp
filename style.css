@@ -30,7 +30,7 @@ body.dark .card, body.dark .chat-box {
 body.sidebar-open main,
 body.sidebar-open header,
 body.sidebar-open footer {
-  margin-left: 250px;
+  transform: translate(250px);
   transition: margin-left 0.3s ease;
 }
 
@@ -45,19 +45,31 @@ header {
 header h1 {
   font-size: 2.4rem;
   margin-bottom: 10px;
+  color: white;
 }
 header p {
   max-width: 650px;
   font-size: 1.05rem;
   opacity: 0.95;
 }
+.chat-btn{
+   position: fixed;
+  bottom: 40px;
+  right: 40px;
+  background: #2563eb;
+  color: white;
+  padding: 14px 22px;
+  border-radius: 50px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  
+  
+}
 
 /* BUTTONS */
 .btn-primary,
-.chat-btn,
 .header-controls button,
 .home-btn {
-  padding: 10px 20px;
+  padding: 10px 30px;
   border-radius: 6px;
   font-weight: 600;
   text-decoration: none;
@@ -65,12 +77,9 @@ header p {
 }
 .btn-primary {
   background: #ffffff;
-  color: #1d4ed8;
+  color: #5e6b91;
 }
-.chat-btn {
-  background: #2563eb;
-  color: white;
-}
+
 .header-controls button,
 .home-btn {
   background: white;
@@ -106,30 +115,77 @@ section h2 {
 
 /* SIDEBAR */
 .sidebar {
-  width: 250px;
+  width: 200px;
   height: 100%;
   background: #1e88e5;
   color: white;
   position: fixed;
   top: 0;
-  left: -250px;
-  padding: 20px;
-  transition: left 0.3s ease;
-  z-index: 9998; /* FIXED */
+  left: -260px;
+  padding: 70px 10px;
+  transition: right 0.30s ease-in-out;
+  z-index: 9999;
+  box-shadow: 3px 0 10px rgba(0,0,0,0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
+.sidebar h2 {
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 8px 0;
+  display: block;
+  transition: 0.2s;
+}
+
+.sidebar a:hover {
+  padding-left: 10px;
+  opacity: 0.9;
+}
+
 .sidebar.open {
   left: 0;
 }
+/* DARK OVERLAY */
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(121, 11, 11, 0.45);
+  display: none;
+  z-index: 9998;
+  backdrop-filter: blur(2px);
+}
+
+.sidebar-overlay.show {
+  display: block;
+}
 .menu-icon {
-  position: absolute;
+  position: fixed;
   top: 20px;
   left: 20px;
   font-size: 28px;
   cursor: pointer;
   color: white;
-  z-index: 9999; /* FIXED */
+  z-index: 10000; /* FIXED */
 }
 
+/* SHIFT PAGE CONTENT WHEN SIDEBAR OPENS */
+body.sidebar-open header,
+body.sidebar-open main,
+body.sidebar-open footer {
+  transform: translateX(250px);
+  transition: transform 0.35s ease;
+}
 /* HEADER CONTROLS */
 .header-controls {
   position: absolute;
@@ -159,11 +215,100 @@ section h2 {
   left: 2px;
   transition: 0.3s;
 }
+/* DARK MODE GLOBAL */
+body.dark {
+  background: #121212;
+  color: #e5e5e5;
+}
+
+/* HEADER */
+body.dark header {
+  background: linear-gradient(135deg, #0e0d0d, #1a237e);
+  color: #ffffff;
+}
+
+/* MENU ICON */
+body.dark .menu-icon {
+  color: #ffffff;
+}
+
+/* SIDEBAR */
+body.dark .sidebar {
+  background: #0d47a1;
+  color: white;
+}
+body.dark .sidebar a {
+  color: #e0e0e0;
+}
+body.dark .sidebar a:hover {
+  color: #ffffff;
+}
+
+/* CARDS & SECTIONS */
+body.dark section {
+  background: #1e1e1e;
+  color: #e5e5e5;
+  border: 1px solid #333;
+}
+body.dark .card {
+  background: #2a2a2a;
+  border-color: #444;
+  color: #e5e5e5;
+}
+
+/* CHATBOT */
+body.dark .chat-box {
+  background: #1e1e1e;
+  color: #e5e5e5;
+  border: 1px solid #333;
+}
+body.dark .chat-btn{
+  background-color: rgb(58, 54, 54);
+  color: white;
+}
+body.dark .chat-log {
+  background: #2a2a2a;
+  border-color: #444;
+  color: #e5e5e5;
+}
+body.dark .input-row input {
+  background: #333;
+  color: #fff;
+  border: 1px solid #555;
+}
+
+/* POPUP */
+body.dark .popup {
+  background: #1e1e1e;
+  color: #e5e5e5;
+}
+body.dark .popup input {
+  background: #333;
+  color: #fff;
+  border: 1px solid #555;
+}
+
+/* FOOTER */
+body.dark footer {
+  background: #1e1e1e;
+  color: #e5e5e5;
+  border-top: 1px solid #333;
+}
+
+/* TOGGLE SWITCH */
 body.dark .toggle-switch {
-  background: #555;
+  background: #444;
 }
 body.dark .toggle-switch .circle {
   left: 28px;
+}
+body.dark .profile-btn{
+  color: white;
+  background-color: black;
+}
+body.dark .header-controls button{
+  background-color: black;
+  color: white;
 }
 
 /* PROFILE DROPDOWN */
@@ -173,7 +318,7 @@ body.dark .toggle-switch .circle {
 .profile-btn {
   background: white;
   color: #1e88e5;
-  padding: 8px 16px;
+  padding: 6px 16px;
   border-radius: 6px;
   cursor: pointer;
 }
