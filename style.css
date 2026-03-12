@@ -53,9 +53,9 @@ header p {
   opacity: 0.95;
 }
 .chat-btn{
-  position: fixed;
-  bottom: 1px;
-  right: 20px;
+   position: fixed;
+  bottom: 40px;
+  right: 40px;
   background: #2563eb;
   color: white;
   padding: 14px 22px;
@@ -390,42 +390,7 @@ body.dark .header-controls button{
 .input-row {
   display: flex;
   gap: 10px;
-  
 }
-.input-row button {
-  padding: 12px 26px;       /* Bigger button */
-  font-size: 1rem;          /* Larger text */
-  border-radius: 8px;       /* Softer corners */
-  background: #1e88e5;      /* Your theme color */
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-weight: 600;
-  transition: 0.2s ease;
-}
-
-.input-row button:hover {
-  background: #1565c0;      /* Slightly darker on hover */
-  transform: scale(1.05);   /* Small hover animation */
-}
-body.dark input-row button
-{
-   padding: 12px 26px;       /* Bigger button */
-  font-size: 1rem;          /* Larger text */
-  border-radius: 8px;       /* Softer corners */
-  background: #151f28;      /* Your theme color */
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-weight: 600;
-  transition: 0.2s ease;
-}
-body.dark input-row button:hover
-{
-   background: #202d3b;      /* Slightly darker on hover */
-  transform: scale(1.05);   /* Small hover animation */
-}
-
 .input-row input {
   flex: 1;
   padding: 10px;
