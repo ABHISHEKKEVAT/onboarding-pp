@@ -366,7 +366,7 @@ body.dark .header-controls button{
   padding: 10px;
   margin: 10px 0;
   border-radius: 6px;
-  border: 1px solid #ccc;
+  border: 1px solid white;
 }
 
 /* CHATBOT */
