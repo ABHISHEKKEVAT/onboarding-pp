@@ -422,3 +422,82 @@ footer {
   margin-top: 10px;
   font-size: 0.9rem;
 }
+   DEFAULT STYLES (Laptop/Desktop)
+   ------------------------------ */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.three-column-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.two-column-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.left-box, .right-box {
+  width: 48%;
+}
+
+.profile-photo {
+  width: 180px;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* ------------------------------
+   TABLET VIEW (Medium screens)
+   ------------------------------ */
+@media (max-width: 1024px) {
+  .three-column-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .two-column-section {
+    flex-direction: column;
+  }
+
+  .left-box, .right-box {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .profile-photo {
+    width: 150px;
+  }
+}
+
+/* ------------------------------
+   MOBILE VIEW (Small screens)
+   ------------------------------ */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  .profile-photo {
+    width: 120px;
+  }
+
+  .three-column-header {
+    padding: 10px;
+  }
+
+  .two-column-section {
+    padding: 10px;
+  }
+
+  .card {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
